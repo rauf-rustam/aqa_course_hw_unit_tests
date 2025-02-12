@@ -5,4 +5,4 @@
   */
 const salary =  1000
 const grade = salary >=1000 ? "middle" : "junior";
-console.log(grade);
+
