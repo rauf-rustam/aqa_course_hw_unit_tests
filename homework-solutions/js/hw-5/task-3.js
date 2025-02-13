@@ -1,3 +1,5 @@
+import { forEach } from '../hw-8/task-1';
+
 /**
  * Создать строку с информацией о количестве гласных и согласных букв в слове.
  * Переменная `word` уже создана и содержит строку со словом.
@@ -6,14 +8,19 @@
 let vowelsAndConsonantsResult = '';
 const word = 'hello';
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+const CONSONANTS = [
+  "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n",
+  "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"
+];
 
 let vowelsCount = 0;
 let consonantsCount = 0;
-for (const letter in word) {
-  vowelsAndConsonantsResult = VOWELS.includes(letter) ? `hello contains ${++vowelsCount} vowels and ${consonantsCount} consonants` : `hello contains ${vowelsCount} vowels and ${++consonantsCount} consonants`;
-}
 
-
-
-console.log(vowelsAndConsonantsResult);
-//export { vowelsAndConsonantsResult };
+word.split('').forEach((letter) => {
+  if (CONSONANTS.includes(letter)) {
+    vowelsAndConsonantsResult = `hello contains ${vowelsCount} vowels and ${++consonantsCount} consonants`;
+  }else if (VOWELS.includes(letter)) {
+    vowelsAndConsonantsResult = `hello contains ${++vowelsCount} vowels and ${consonantsCount} consonants`
+  }
+});
+export { vowelsAndConsonantsResult };

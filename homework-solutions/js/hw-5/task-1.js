@@ -5,13 +5,11 @@
  */
 
 let evenNumbersResult = '';
-const numbers = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
-for (const number of numbers) {
-  if (number % 2 === 0 && number !== 0) {
-    evenNumbersResult += `${number}-`;
-  } else if (number === 0) {
+for (let i = 10; i >= 0; i--) {
+  if (i === 0) {
     evenNumbersResult += '0';
   }
+  i % 2 === 0 && i !== 0 ? (evenNumbersResult += `${i}-`) : (evenNumbersResult += '');
 }
 console.log(evenNumbersResult);
 

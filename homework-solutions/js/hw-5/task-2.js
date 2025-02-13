@@ -19,14 +19,15 @@
 let fizzBuzzResult = '';
 for (let i = 1; i <= 100; i++) {
   if (i % 3 === 0 && i % 5 === 0) {
-    fizzBuzzResult += i + ' - ' + 'делится и на 3 и на 5' + `${i < 100 ? '\n' : ''}`;
+    fizzBuzzResult += `${i} - делится и на 3 и на 5${i < 100 ? '\n' : ''}`;
   } else if (i % 3 === 0) {
-    fizzBuzzResult += i + ' - ' + 'делится на 3' + `${i < 100 ? '\n' : ''}`;
+    fizzBuzzResult += `${i} - делится на 3${i < 100 ? '\n' : ''}`;
   } else if (i % 5 === 0) {
-    fizzBuzzResult += i + ' - ' + 'делится на 5' + `${i < 100 ? '\n' : ''}`;
+    fizzBuzzResult += `${i} - делится на 5${i < 100 ? '\n' : ''}`;
   } else {
-    fizzBuzzResult += i + '\n';
+    fizzBuzzResult += `${i}\n`;
   }
 }
+
 console.log(fizzBuzzResult);
 export { fizzBuzzResult };
