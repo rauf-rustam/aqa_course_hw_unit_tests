@@ -10,3 +10,4 @@ console.log(
     +(someInterestingNumber.toString() + someInterestingNumber.toString()) +
     +(someInterestingNumber.toString() + someInterestingNumber.toString() + someInterestingNumber.toString()),
 );
+
