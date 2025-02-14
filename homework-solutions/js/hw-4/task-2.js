@@ -18,7 +18,7 @@ const MIN_AGE = 18;
 const MAX_AGE = 60;
 
 function ageChecker(age) {
-  if (isNaN(age)) {
+  if (typeof (age) !== 'number') {
     console.log('Incorrect data type');
   } else if (age < MIN_AGE) {
     console.log(`You don't have access cause your age is ${age}. It's less than ${MIN_AGE}`);

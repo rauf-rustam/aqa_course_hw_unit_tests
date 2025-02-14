@@ -12,14 +12,16 @@ const MAX_AGE = 60;
 
 
 function ageChecker(age) {
-  if (parseInt(age) < MIN_AGE) {
-    console.log(`You don't have access cause your age is ${age}. It's less than ${MIN_AGE}`);
-  } else if (parseInt(age) >= MIN_AGE && parseInt(age) < MAX_AGE) {
-    console.log('Welcome!');
-  } else if (parseInt(age) >= MAX_AGE) {
-    console.log('Keep calm and look Culture channel');
-  } else {
-    console.log('Technical work');
+  if (!isNaN(age)){
+    if (parseInt(age) < MIN_AGE) {
+      console.log(`You don't have access cause your age is ${age}. It's less than ${MIN_AGE}`);
+    } else if (parseInt(age) >= MIN_AGE && parseInt(age) < MAX_AGE) {
+      console.log('Welcome!');
+    } else if (parseInt(age) >= MAX_AGE) {
+      console.log('Keep calm and look Culture channel');
+    } else {
+      console.log('Technical work');
+    }
   }
 }
 
