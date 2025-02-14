@@ -17,10 +17,7 @@ let vowelsCount = 0;
 let consonantsCount = 0;
 
 word.split('').forEach((letter) => {
-  if (CONSONANTS.includes(letter)) {
-    vowelsAndConsonantsResult = `hello contains ${vowelsCount} vowels and ${++consonantsCount} consonants`;
-  }else if (VOWELS.includes(letter)) {
-    vowelsAndConsonantsResult = `hello contains ${++vowelsCount} vowels and ${consonantsCount} consonants`
-  }
+  CONSONANTS.includes(letter) ? consonantsCount++ : VOWELS.includes(letter) ? vowelsCount++ :null;
+  vowelsAndConsonantsResult = `hello contains ${vowelsCount} vowels and ${consonantsCount} consonants`
 });
 export { vowelsAndConsonantsResult };
