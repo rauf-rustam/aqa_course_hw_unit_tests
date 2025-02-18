@@ -7,7 +7,6 @@
 
   Значение добавьте в массив 'forOf' 
 */
-const forOf = [];
 
 /*
 2. Методы массивов
@@ -20,7 +19,6 @@ const forOf = [];
   В результате вы должны получить массив [0, 1, 3, 4, 5], присвойте в переменную "result"
 */
 
-let result;
 
 /*
 3. Деструктуризация массивов
@@ -39,4 +37,4 @@ let result;
   Создайте переменную mergedArray, который будет хранить значения из массивов 1 и 2
 */
 
-export { forOf, result, first, second, rest, mergedArray };
+//export { forOf, result, first, second, rest, mergedArray };
