@@ -37,4 +37,4 @@
   Создайте переменную mergedArray, который будет хранить значения из массивов 1 и 2
 */
 
-export { forOf, result, first, second, rest, mergedArray };
+//export { forOf, result, first, second, rest, mergedArray };
