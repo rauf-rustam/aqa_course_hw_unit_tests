@@ -6,15 +6,15 @@
 
   Присвойте результат в переменную "unique"
 */
-
-const numbers =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 1, 3, 5, 7, 9];
 let unique;
-for (let i = 0; i < numbers.length; i++) {
-  if(numbers[i] !== numbers[i++]) {
-    console.log(numbers[i]);
-    unique = i;
-    console.log(unique);
+const arrayWithDuplicate = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 10, 1, 3, 5, 7, 9];
+let i = 0;
+while (i < arrayWithDuplicate.length) {
+  if (arrayWithDuplicate.indexOf(arrayWithDuplicate[i]) !== i) {
+    arrayWithDuplicate.splice(i, 1);
+  } else {
+    i++;
   }
 }
-console.log(unique);
-//export { unique };
+unique = [...arrayWithDuplicate];
+export { unique };
