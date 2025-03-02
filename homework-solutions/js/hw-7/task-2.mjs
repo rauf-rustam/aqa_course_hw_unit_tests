@@ -8,12 +8,7 @@ import { fibonacci } from './task-1.mjs';
 function isPalindrom(word) {
   // Ваш код
   let palindrome = false;
-  if (typeof word !== 'string') {
-    return false;
-  } else {
-    let reversWord = word.split('').reverse().join('').toLowerCase();
-    return reversWord === word.toLowerCase() && typeof word === 'string' ? true : false;
-  }
+return typeof word === 'string' ? word.toLowerCase() === word.toLowerCase().split('').reverse().join('') : false;
 }
 
 /*
