@@ -11,5 +11,4 @@ function findMissingNumber(numbers) {
   const n = numbers.length + 1;
   return numbers.reduce((a, b) => a + b, -((n * (n + 1)) / 2)) * -1;
 }
-
 export { findMissingNumber };
