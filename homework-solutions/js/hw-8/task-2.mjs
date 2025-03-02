@@ -18,8 +18,18 @@ const words = [
   'queue',
 ];
 
+const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+
 function sortedByVowels(wordsArr) {
-  // Ваш код
+  function countOfVowels(word) {
+    let consonantsCount = 0;
+    word.split('').forEach((letter) => {
+      VOWELS.includes(letter) ? consonantsCount++ : null;
+    });
+    return consonantsCount;
+  }
+
+  return wordsArr.sort((a, b) => countOfVowels(a) - countOfVowels(b));
 }
 
 export { sortedByVowels };
