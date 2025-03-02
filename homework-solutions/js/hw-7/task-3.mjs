@@ -11,7 +11,7 @@
 function digitalRoot(number) {
   // Ваш код
   let sum = 0;
-  let digitsArray = number.toString().split('');
+  const digitsArray = number.toString().split('');
   for (let el of digitsArray) {
     sum += parseInt(el);
   }
