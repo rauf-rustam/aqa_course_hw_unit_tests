@@ -8,6 +8,10 @@
 
 function findMissingNumber(numbers) {
   // Ваш код
+  const n = numbers.length + 1;
+  const sumOfPresentItems = (n * (n + 1)) / 2;
+
+  return numbers.reduce((sum, item) => sum - item, sumOfPresentItems);
 }
 
 export { findMissingNumber };
