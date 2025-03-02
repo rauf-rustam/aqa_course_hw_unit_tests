@@ -3,8 +3,12 @@
  Написать функцию, которая принимает на вход слово и проверяет, является ли это слово палиндромом
 */
 
+import { fibonacci } from './task-1.mjs';
+
 function isPalindrom(word) {
   // Ваш код
+  let palindrome = false;
+return typeof word === 'string' ? word.toLowerCase() === word.toLowerCase().split('').reverse().join('') : false;
 }
 
 /*
@@ -16,6 +20,22 @@ function isPalindrom(word) {
 
 function findLongestWords(sentence) {
   // Ваш код
+  if (typeof sentence !== 'string' || sentence.length === 0) {
+    return [];
+  } else {
+    let words = sentence.split(' ');
+    let maxLenght = 0;
+    let longestWord = [];
+    for (let i = 0; i < words.length; i++) {
+      if (words[i].length > maxLenght) {
+        maxLenght = words[i].length;
+        longestWord = [words[i]];
+      } else if (words[i].length === maxLenght) {
+        longestWord.push(words[i]);
+      }
+    }
+    return longestWord;
+  }
 }
 
 export { isPalindrom, findLongestWords };

@@ -10,6 +10,15 @@
 
 function digitalRoot(number) {
   // Ваш код
+  let sum = 0;
+  const digitsArray = number.toString().split('');
+  for (let el of digitsArray) {
+    sum += parseInt(el);
+  }
+  if (sum >= 10) {
+    return digitalRoot(sum);
+  }
+  return sum;
 }
 
 export { digitalRoot };

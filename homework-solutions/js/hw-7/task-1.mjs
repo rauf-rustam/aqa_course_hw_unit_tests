@@ -5,9 +5,14 @@
   - Например: mergeArrays([1,2], [3,4], [5,6]) // [1,2,3,4,5,6]
   - Решить с использованием Spread operator
 */
-function mergeArrays() {
-  // Ваш код
+function mergeArrays(...arrays) {
+  const resultArray = [];
+  for (let array of arrays) {
+    resultArray.push(...array);
+  }
+  return resultArray;
 }
+
 /*
   2. Devide by _
     - Написать функцию, которая преобразует любое предложение в вот_Такой_Вот_Вид и возвращает его. 
@@ -16,7 +21,15 @@ function mergeArrays() {
   */
 function devideBy(sentence) {
   // Ваш код
+  let newStr = [];
+  newStr = sentence.split(' ');
+  newStr[0] = newStr[0].toLowerCase();
+  for (let i = 1; i < newStr.length; i++) {
+    newStr[i] = newStr[i].replace(/\b\w/g, (char) => char.toUpperCase());
+  }
+  return newStr.join('_');
 }
+
 /*
   3. Фибаначчи
     - Напишите функцию fibonacci(n), возвращающую энное число Фибоначчи
@@ -26,7 +39,12 @@ function devideBy(sentence) {
     - Например fibonacci(8) //21
   */
 function fibonacci(n) {
-  // Ваш код
+  if (n <= 1) {
+    return n;
+  }else{
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
 }
 
+console.log(fibonacci(45));
 export { mergeArrays, fibonacci, devideBy };
