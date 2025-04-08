@@ -15,22 +15,53 @@ const characters = [
 
 function addCharacter(character) {
   // Ваш код
+  if (
+    typeof character !== 'object' ||
+    character === null ||
+    !Object.hasOwn(character, 'name') ||
+    typeof character.name !== 'string' ||
+    !Object.hasOwn(character, 'age') ||
+    typeof character.age !== 'number'
+  ) {
+    throw new Error(`Character must be an object`);
+  } else {
+    characters.push(character);
+  }
 }
 
 function getCharacter(name) {
   // Ваш код
+  return characters.find((character) => character.name === name);
 }
 
 function getCharactersByAge(minAge) {
   // Ваш код
+  if (typeof minAge !== 'number') {
+    throw new Error(`Age must be a number`);
+  }
+  return characters.filter((character) => character.age >= minAge);
 }
 
 function updateCharacter(name, newCharacter) {
   // Ваш код
+  const character = getCharacter(name);
+  if (!character) {
+    throw new Error(`Character not exists`);
+  }
+
+  const index = characters.indexOf(character);
+  characters[index] = newCharacter;
 }
 
 function removeCharacter(name) {
   // Ваш код
+  const character = getCharacter(name);
+  if (!character) {
+    throw new Error(`Character not exists`);
+  }
+
+  const index = characters.findIndex((character) => character.name === name);
+  characters.splice(index, 1);
 }
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
